@@ -1,71 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>She Said Yes 💖</title>
+<meta charset="UTF-8">
+<title>Lover Era 💕</title>
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ffe6ee, #ffd1dc);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, Helvetica, sans-serif;
-      overflow: hidden;
-      text-align: center;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-    h1 {
-      font-size: 48px;
-      color: #ff3366;
-      line-height: 1.4;
-    }
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pacifico', cursive;
+  overflow: hidden;
+  text-align: center;
+}
 
-    .heart {
-      position: absolute;
-      bottom: -20px;
-      font-size: 26px;
-      animation: floatUp 6s linear infinite;
-      opacity: 0.9;
-    }
+h1 {
+  font-size: 48px;
+  color: #ff4d88;
+  z-index: 2;
+}
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-120vh) scale(1.6);
-        opacity: 0;
-      }
-    }
-  </style>
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 28px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+</style>
 </head>
+
 <body>
 
-  <h1>
-    Yay Boo Boo 💕<br>
-    I knew it 😍
-  </h1>
+<h1>
+  Yay Sameekshya 💕<br>
+  It’s a Love Story 💖
+</h1>
 
-  <script>
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerHTML = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
-      document.body.appendChild(heart);
+<!-- 🎵 Taylor-style instrumental -->
+<audio autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
 
-      setTimeout(() => {
-        heart.remove();
-      }, 7000);
-    }
-
-    setInterval(createHeart, 300);
-  </script>
+<script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = Math.random() > 0.5 ? "💖" : "✨";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 7000);
+}
+setInterval(createHeart, 300);
+</script>
 
 </body>
 </html>
