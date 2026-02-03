@@ -19,12 +19,38 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-size: 48px;
-  color: #ff4d88;
+.container {
   z-index: 2;
 }
 
+h1 {
+  font-size: 46px;
+  color: #ff4d88;
+  margin-bottom: 20px;
+}
+
+/* 🎤 Taylor image styling */
+.taylor-img {
+  width: 220px;
+  max-width: 70vw;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease;
+}
+
+/* subtle entrance */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.message {
+  font-size: 22px;
+  color: #ff5c8a;
+}
+
+/* floating hearts */
 .heart {
   position: absolute;
   bottom: -20px;
@@ -41,28 +67,18 @@ h1 {
 
 <body>
 
-<h1>
-  Yay Sameekshya 💕<br>
-  It’s a Love Story 💖
-</h1>
+<div class="container">
+  <!-- 🎤 Taylor congratulates -->
+  <img src="taylor.png" alt="Taylor Swift" class="taylor-img">
+
+  <h1>
+    Yay Sameekshya 💕<br>
+    It’s a Love Story 💖
+  </h1>
+
+  <div class="message">
+    Taylor would totally approve this 🥹✨
+  </div>
+</div>
 
 <!-- 🎵 Taylor-style instrumental -->
-<audio autoplay loop>
-  <source src="song.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = Math.random() > 0.5 ? "💖" : "✨";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 7000);
-}
-setInterval(createHeart, 300);
-</script>
-
-</body>
-</html>
