@@ -2,46 +2,86 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Sameekshya ❤️</title>
+<title>For Sameekshya 💕</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600&display=swap');
+
 body {
   margin: 0;
   height: 100vh;
-  background: #ff5c8a;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   overflow: hidden;
 }
 
 .card {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 45px 50px;
+  border-radius: 25px;
   text-align: center;
   z-index: 10;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  max-width: 420px;
+}
+
+.intro {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #ff4d88;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 button {
-  padding: 12px 25px;
+  padding: 12px 32px;
   font-size: 18px;
-  margin: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 #yes {
-  background: green;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
   color: white;
   font-size: 22px;
 }
 
 #no {
-  background: red;
-  color: white;
+  background: #e0e0e0;
+  color: #555;
+}
+
+/* 💖 Floating hearts & sparkles */
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-120vh) scale(1.6); opacity: 0; }
 }
 </style>
 </head>
@@ -49,21 +89,26 @@ button {
 <body>
 
 <div class="card">
-  <p><i>I made something for you… Open this 💕</i></p>
+  <div class="intro">I made something for you…<br><strong>Open this 💕</strong></div>
 
-  <h2>Sameekshya 💖<br>Will you be my Valentine?</h2>
+  <h1>
+    Sameekshya 💖<br>
+    Will you be my Valentine?
+  </h1>
 
-  <button id="yes">Yes</button>
-  <button id="no">No</button>
+  <div class="buttons">
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
 </div>
 
 <script>
 let size = 22;
 let texts = [
   "Are you sure? 🥺",
-  "Please 💔",
+  "This is very Lover-coded 💔",
   "Think again 😢",
-  "Don't break my heart 😭",
+  "Don’t break my Swiftie heart 😭",
   "Last chance 😔"
 ];
 let i = 0;
@@ -78,6 +123,18 @@ document.getElementById("no").onclick = function () {
 document.getElementById("yes").onclick = function () {
   window.location.href = "yes_page.html";
 };
+
+// floating hearts
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = Math.random() > 0.5 ? "💖" : "✨";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 7000);
+}
+setInterval(createHeart, 350);
 </script>
 
 </body>
